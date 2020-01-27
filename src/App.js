@@ -1,25 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter,
+  Route
+} from "react-router-dom";
+import Header from './Components/Header'
+import Dashboard from './Components/Dashboard'
+import Roles from './Components/Roles'
+import Archive from './Components/Archive'
+import Communication from './Components/Communication'
+import PromoCodes from './Components/PromoCodes'
+import QruzBusiness from './Components/QruzBusiness'
+import QruzCommute from './Components/QruzCommute'
+import QruzOnDemand from './Components/QruzOnDemand'
+import Fleet from './Components/Fleet'
+import Payments from './Components/Payments'
+import Cancellation from './Components/Cancellation'
+import Settings from './Components/Settings'
+import NewRole from './Components/NewRole'
+import EditRole from './Components/EditRole'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <div className="container mt-4">
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/roles" component={Roles} />
+        <Route exact path="/archive" component={Archive} />
+        <Route exact path="/communication" component={Communication} />
+        <Route exact path="/promo-codes" component={PromoCodes} />
+        <Route exact path="/qruz-business" component={QruzBusiness} />
+        <Route exact path="/qruz-commute" component={QruzCommute} />
+        <Route exact path="/qruz-on-demand" component={QruzOnDemand} />
+        <Route exact path="/fleet" component={Fleet} />
+        <Route exact path="/payments" component={Payments} />
+        <Route exact path="/cancellation" component={Cancellation} />
+        <Route exact path="/settings" component={Settings} />
+        <Route exact path="/roles/new" component={NewRole} />
+        <Route exact path="/roles/edit" component={EditRole} />
+      </div>
+    </BrowserRouter>
   );
 }
 
