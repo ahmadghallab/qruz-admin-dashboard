@@ -1,21 +1,104 @@
 body {
   background-color: #f8f9fa;
 }
+.wrapper {
+  margin-top: 80px;
+}
 .navbar {
   background-color: #563d7c !important;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
   font-weight: 500;
 }
-.form-control {
-  border: 0;
-  border-bottom: 1px solid rgba(0,0,0,.125);
-  padding-left: 1px;
-  border-radius: 0;
+.form-control, .custom-file-label {
+  border: 2px solid #f1f2f3;
+  background-color: #f1f2f3;
+}
+.form-control:focus,
+.custom-control-input:checked~.custom-control-label::before {
+  outline: none !important;
+  box-shadow: none !important;
 }
 .form-control:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: #007bff;
+  border: 2px solid #eceded;
+  background-color: transparent;
+}
+label {
+  font-weight: 500;
+}
+.btn-custom {
+  border-radius: 3px !important;
+  color: #fff;
+  border: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 6px 0px, #3a255a 0px -2px 0px 0px inset;
+}
+.btn, .form-control {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, width 0.3s ease, opacity 0.3s ease;
+}
+.btn:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+.btn[disabled] {
+  opacity: 0.5;
+}
+.custom-control-label::before {
+  background-color: #eee;
+  border: #eee solid 1px;
+}
+.btn-custom {
+  border-color: #563d7c;
+  background-color: #563d7c;
+}
+.custom-control-input:checked~.custom-control-label::before, 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link,
+.bg-custom {
+  border-color: #563d7c;
+  background-color: #563d7c;
+}
+.circle {
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+}
+.circle-md {
+  width: 60px;
+  height: 60px;
+}
+.circle-sm {
+  width: 30px;
+  height: 30px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.image-cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.image-cover-md {
+  height: 80px;
+  width: 80px;
+}
+.image-cover-sm {
+  height: 40px;
+  width: 40px;
+}
+a {
+  color: #352450;
+}
+a:hover {
+  text-decoration: none;
+  color: #563d7c;
+}
+.table td, .table th {
+  vertical-align: middle;
 }
 @keyframes fadeInUp {
   0% {
@@ -59,4 +142,5 @@ body {
   animation-name: fadeInUp;
   animation-duration: .3s;
   animation-timing-function: ease;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06);
 }

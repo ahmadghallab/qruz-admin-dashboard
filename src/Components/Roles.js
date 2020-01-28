@@ -15,12 +15,12 @@ class Roles extends Component {
                 </form>
               </div>
               <div className="col-auto align-self-center">
-                <Link to="/roles/new" className="btn btn-sm btn-light">New Role</Link>
+                <Link to="/roles/new" className="btn btn-custom">New Role</Link>
               </div>
             </div>
           </div>
         </div>
-        <div className="card border-0 mb-3">
+        <div className="card border-0 mb-4">
           <div className="card-body">
             <table className="table table-hover">
               <thead>
@@ -43,7 +43,7 @@ class Roles extends Component {
                     <td>{role.email}</td>
                     <td>{role.role_type}</td>
                     <td>{role.status}</td>
-                    <td>{role.last_seen}</td>
+                    <td className="text-muted">{role.last_seen}</td>
                     <td>
                       <Link to="/roles/edit" className="btn btn-sm btn-light">Edit</Link>
                     </td>
