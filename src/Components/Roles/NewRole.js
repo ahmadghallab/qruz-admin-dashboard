@@ -14,25 +14,31 @@ class NewRole extends Component {
             <form>
               <div className="form-row">
                 <div className="form-group col-md-3">
-                  {/* <label>First Name</label> */}
+                  {/* <label htmlFor="firstName">First Name</label> */}
                   <input type="text" name="firstName" id="firstName" className="form-control" autoComplete="off" placeholder="First Name" />
                 </div>
                 <div className="form-group col-md-3">
+                  {/* <label htmlFor="lastName">Last Name</label> */}
                   <input type="text" name="lastName" id="lastName" className="form-control" autoComplete="off" placeholder="Last Name" />
                 </div>
                 <div className="form-group col-md-3">
+                  {/* <label htmlFor="email">Email</label> */}
                   <input type="email" name="email" id="email" className="form-control" autoComplete="off" placeholder="Email" />
                 </div>
                 <div className="form-group col-md-3">
+                  {/* <label htmlFor="mobile">Mobile</label> */}
                   <input type="number" name="mobile" id="mobile" className="form-control" autoComplete="off" placeholder="Mobile" />
                 </div>
                 <div className="form-group col-md-3">
+                  {/* <label htmlFor="password">Password</label> */}
                   <input type="password" name="password" id="password" className="form-control" autoComplete="off" placeholder="Password" />
                 </div>
                 <div className="form-group col-md-3">
+                  {/* <label htmlFor="rePassword">Confirm Password</label> */}
                   <input type="password" name="rePassword" id="rePassword" className="form-control" autoComplete="off" placeholder="rePassword" />
                 </div>
                 <div className="form-group col-md-3">
+                  {/* <label htmlFor="roleType">Role Type</label> */}
                   <select name="roleType" id="roleType" className="form-control">
                     <option value="">Select Role Type</option>
                     <option value="admin">Admin</option>
@@ -42,6 +48,7 @@ class NewRole extends Component {
                   </select>
                 </div>
                 <div className="form-group col-md-3">
+                  {/* <label htmlFor="employeeID">Employee ID</label> */}
                   <input type="text" name="employeeID" id="employeeID" className="form-control" autoComplete="off" placeholder="Employee ID" />
                 </div>
               </div>

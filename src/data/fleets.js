@@ -1,12 +1,12 @@
-const drivers = [
+const fleets = [
   {
     id: 1,
     first_name: "Ahmad",
     last_name: "Fathy",
     mobile: "00201025007754",
-    car_type: "Hyundai i10",
+    no_of_cars: 15,
+    car_types: ["Vans", "33s Buses", "50s Buses"],
     status: "Active",
-    car_no: "س ب ل 3432",
     avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
   },
   {
@@ -14,9 +14,9 @@ const drivers = [
     first_name: "Marcus",
     last_name: "Obrien",
     mobile: "00201025007759",
-    car_type: "Hyundai i30",
+    no_of_cars: 25,
+    car_types: ["Vans", "33s Buses", "50s Buses"],
     status: "Inactive",
-    car_no: "س ي ل 3342",
     avatar: "https://cdn.vuetifyjs.com/images/john.jpg"
   },
   {
@@ -24,9 +24,9 @@ const drivers = [
     first_name: "Andrew",
     last_name: "Mead",
     mobile: "00201025007750",
-    car_type: "Toyota Camry",
-    status: "Inactive",
-    car_no: "س ب ل 3432",
+    no_of_cars: 11,
+    car_types: ["Vans", "33s Buses", "50s Buses"],
+    status: "Active",
     avatar: "https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
   },
   {
@@ -34,11 +34,11 @@ const drivers = [
     first_name: "Ali",
     last_name: "Connors",
     mobile: "00201025047754",
-    car_type: "Mitsubishi Lancer",
+    no_of_cars: 7,
+    car_types: ["Vans", "33s Buses", "50s Buses"],
     status: "Active",
-    car_no: "ب ل 8132",
     avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg"
   }
 ]
 
-export default drivers
+export default fleets

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import RoleList from '../data/roles'
+import Roles from '../../data/roles'
 
-class Roles extends Component {
+class RoleList extends Component {
   render() {
     return (
       <div>
@@ -36,16 +36,20 @@ class Roles extends Component {
                 </tr>
               </thead>
               <tbody>
-                {RoleList.map((role) =>
+                {Roles.map((role) =>
                   <tr key={role.id}>
                     <td>{role.id}</td>
-                    <td>{role.name}</td>
+                    <td className="font-weight-bold">{role.name}</td>
                     <td>{role.email}</td>
                     <td>{role.role_type}</td>
-                    <td>{role.status}</td>
+                    <td>
+                      <span className={"badge badge-pill" + (role.status === "Online" ? " bg-custom text-white" : " badge-light")}>
+                        {role.status}
+                      </span>
+                    </td>
                     <td className="text-muted">{role.last_seen}</td>
                     <td>
-                      <Link to="/roles/edit" className="btn btn-sm btn-light">Edit</Link>
+                      <Link to={`/roles/${role.id}/edit`} className="btn btn-sm btn-light">Edit</Link>
                     </td>
                     <td>
                       <button type="button" className="btn btn-sm btn-light">Delete</button>
@@ -61,4 +65,4 @@ class Roles extends Component {
   }
 }
 
-export default Roles
+export default RoleList

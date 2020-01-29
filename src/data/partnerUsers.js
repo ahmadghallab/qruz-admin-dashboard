@@ -6,7 +6,7 @@ const partnerUsers = [
     trip: "El Shatby",
     days: ["S", "M", "T", "W", "T"],
     avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
-    status: "Active"
+    status: "Inactive"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const partnerUsers = [
     trip: "El Shatby",
     days: ["S", "M", "T", "W"],
     avatar: "https://cdn.vuetifyjs.com/images/john.jpg",
-    status: "Active"
+    status: "Inactive"
   },
   {
     id: 3,

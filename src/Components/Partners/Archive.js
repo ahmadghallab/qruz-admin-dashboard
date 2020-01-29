@@ -8,7 +8,7 @@ class PartnerArchive extends Component {
     const { match: { params } } = this.props    
     return (
       <div>
-        <PartnerNavLinks id={params.id} />
+        <PartnerNavLinks id={params.partnerID} />
         <div className="card border-0 mb-4">
           <div className="card-body">
             <div className="row">
@@ -18,7 +18,7 @@ class PartnerArchive extends Component {
                 </form>
               </div>
               {/* <div className="col-auto align-self-center">
-                <Link to={`/qruzbusiness/partners/${params.id}/trips/new`} className="btn btn-custom">New Trip</Link>
+                <Link to={`/qruzbusiness/partners/${params.partnerID}/trips/new`} className="btn btn-custom">New Trip</Link>
               </div> */}
             </div>
           </div>
@@ -30,7 +30,7 @@ class PartnerArchive extends Component {
                 <tr>
                   <th className="border-top-0 text-center">ID</th>
                   <th className="border-top-0 text-center">Date a Time</th>
-                  <th className="border-top-0 text-center">ADriver</th>
+                  <th className="border-top-0 text-center">Driver</th>
                   <th className="border-top-0 text-center">Subbed Users</th>
                   <th className="border-top-0 text-center">Trip</th>
                   <th className="border-top-0 text-center">Feedback</th>

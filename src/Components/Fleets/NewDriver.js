@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-class NewPartnerUser extends Component {
+class NewDriver extends Component {
   render() {
     return (
       <div>
         <div className="card border-0 mb-4">
           <div className="card-body">
-            <h6 className="mb-0">Add a new partner user</h6>
+            <h6 className="mb-0">Create a new driver</h6>
           </div>
         </div>
         <div className="card border-0 mb-4">
@@ -29,25 +29,22 @@ class NewPartnerUser extends Component {
                   <input type="text" name="lastName" id="lastName" className="form-control" autoComplete="off" placeholder="Last Name" />
                 </div>
                 <div className="form-group col-md-3">
-                  <input type="text" name="organization" id="organization" className="form-control" autoComplete="off" placeholder="Organization" />
-                </div>
-                <div className="form-group col-md-3">
                   <input type="number" name="phone" id="phone" className="form-control" autoComplete="off" placeholder="Phone" />
                 </div>
                 <div className="form-group col-md-3">
                   <input type="email" name="email" id="email" className="form-control" autoComplete="off" placeholder="Email" />
                 </div>
                 <div className="form-group col-md-3">
-                  <input type="text" name="position" id="position" className="form-control" autoComplete="off" placeholder="Position" />
+                  <input type="text" name="car_no" id="car_no" className="form-control" autoComplete="off" placeholder="Car Number" />
                 </div>
               </div>
               <div className="form-row mb-4">
                 <div className="form-group col-md-6">
-                  <label htmlFor="expDay">Assign this user to a trip</label>
-                  <select name="expDay" id="expDay" className="form-control">
-                    <option value="">Select Trip</option>
-                    <option value="1">1</option>
-                  </select>
+                  <label htmlFor="uploadAttachment">Upload Attachment</label>
+                  <div className="custom-file">
+                    <input type="file" className="custom-file-input" id="uploadAttachment" />
+                    <label className="custom-file-label" htmlFor="uploadAttachment">E.g. Contract, License, Insurance, etc.</label>
+                  </div>
                 </div>
                 <div className="form-group col-md-2">
                   <label htmlFor="expDay">Expire Day</label>
@@ -70,12 +67,6 @@ class NewPartnerUser extends Component {
                     <option value="1">1</option>
                   </select>
                 </div>
-                <div className="form-group col-md-3">
-                  <div className="custom-control custom-switch">
-                    <input type="checkbox" className="custom-control-input" id="notifyUserViaSMS" />
-                    <label className="custom-control-label" htmlFor="notifyUserViaSMS">Send subscription code via sms</label>
-                  </div>
-                </div>
               </div>
               <button type="submit" className="btn btn-custom">Save</button>
             </form>
@@ -86,4 +77,4 @@ class NewPartnerUser extends Component {
   }
 }
 
-export default NewPartnerUser
+export default NewDriver

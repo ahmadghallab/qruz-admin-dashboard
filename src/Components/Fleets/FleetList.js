@@ -1,24 +1,21 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import PartnerUserList from '../../data/partnerUsers'
-import PartnerNavLinks from './PartnerNavLinks'
+import Fleets from '../../data/fleets'
 
-class PartnerUsers extends Component {
+class FleetList extends Component {
   render() {
-    const { match: { params } } = this.props    
     return (
       <div>
-        <PartnerNavLinks id={params.partnerID} />
         <div className="card border-0 mb-4">
           <div className="card-body">
             <div className="row">
               <div className="col align-self-center">
                 <form>
-                  <input type="text" className="form-control" placeholder="Start typing to search all employees/users"></input>
+                  <input type="text" className="form-control" placeholder="Start typing to search all available fleets"></input>
                 </form>
               </div>
               <div className="col-auto align-self-center">
-                <Link to={`/qruzbusiness/partners/${params.partnerID}/users/new`} className="btn btn-custom">New User</Link>
+                <Link to={`/fleets/new`} className="btn btn-custom">New Fleet</Link>
               </div>
             </div>
           </div>
@@ -28,39 +25,39 @@ class PartnerUsers extends Component {
             <table className="table table-hover">
               <thead>
                 <tr>
-                  <th className="border-top-0 text-center" colSpan="2">Passenger Name</th>
+                  <th className="border-top-0 text-center" colSpan="2">Name</th>
                   <th className="border-top-0 text-center">Mobile</th>
-                  <th className="border-top-0 text-center">Trip</th>
-                  <th className="border-top-0 text-center">Days</th>
+                  <th className="border-top-0 text-center">No. of Cars</th>
+                  <th className="border-top-0 text-center">Car Types</th>
                   <th className="border-top-0 text-center">Status</th>
                   <th className="border-top-0" colSpan="2"></th>
                 </tr>
               </thead>
               <tbody>
-                {PartnerUserList.map((user) =>
-                  <tr key={user.id}>
+                {Fleets.map((fleet) =>
+                  <tr key={fleet.id}>
                     <td>
                       <div className="image-cover image-cover-sm" 
-                        style={{ backgroundImage: "url("+ user.avatar +")" }}>
+                        style={{ backgroundImage: "url("+ fleet.avatar +")" }}>
                       </div>
                     </td>
-                    <td className="font-weight-bold">{user.name}</td>
-                    <td className="text-center">{user.mobile}</td>
-                    <td className="text-center">{user.trip}</td>
+                    <td className="font-weight-bold">{fleet.first_name} {fleet.last_name}</td>
+                    <td className="text-center">{fleet.mobile}</td>
+                    <td className="text-center">{fleet.no_of_cars}</td>
                     <td className="text-center">
-                      {user.days.map((day, index) => 
-                        <span key={index} className="circle circle-sm bg-custom text-white mr-2">
-                          {day}
+                      {fleet.car_types.map((carType, index) => 
+                        <span key={index} className="badge badge-light mr-1">
+                          {carType}
                         </span>
                       )}
                     </td>
                     <td className="text-center">
-                      <span className={"badge badge-pill" + (user.status === "Active" ? " bg-custom text-white" : " badge-light")}>
-                        {user.status}
+                      <span className={"badge badge-pill" + (fleet.status === "Active" ? " bg-custom text-white" : " badge-light")}>
+                        {fleet.status}
                       </span>
                     </td>
                     <td className="text-center">
-                      <Link to={`/qruzbusiness/partners/${params.partnerID}/users/${user.id}/edit`} className="btn btn-sm btn-light">Edit</Link>
+                      <Link to={`/fleets/${fleet.id}/drivers`} className="btn btn-sm btn-light">Drivers</Link>
                     </td>
                     <td>
                       <button type="button" className="btn btn-sm btn-light">Delete</button>
@@ -76,4 +73,4 @@ class PartnerUsers extends Component {
   }
 }
 
-export default PartnerUsers
+export default FleetList

@@ -1,21 +1,48 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import PartnerDriverList from '../../data/drivers'
-import PartnerNavLinks from './PartnerNavLinks'
+import FleetDriverList from '../../data/drivers'
+import Fleets from '../../data/fleets'
 
-class PartnerDrivers extends Component {
+class FleetDrivers extends Component {
   render() {
     const { match: { params } } = this.props
     return (
       <div>
-        <PartnerNavLinks id={params.partnerID} />
+        <div className="card border-0 mb-4">
+          <div className="card-body">
+            <div className="row">
+              <div className="col-auto align-self-center">
+                <div className="image-cover image-cover-md" 
+                  style={{ backgroundImage: "url("+ Fleets[params.fleetID].avatar +")" }}>
+                </div>
+              </div>
+              <div className="col align-self-center">
+                <p className="mb-1 text-muted">{ Fleets[params.fleetID].no_of_cars } Cars</p>
+                <h4 className="mb-1 font-weight-bold">
+                  {Fleets[params.fleetID].first_name} {Fleets[params.fleetID].last_name}
+                </h4>
+                <p className="text-muted">{ FleetDriverList.length } drivers</p>
+                <div>
+                  <Link to={`/fleets/${params.fleetID}/edit`} className="btn btn-sm btn-light mr-2">
+                    Edit this fleet
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="card border-0 mb-4">
           <div className="card-body">
             <div className="row">
               <div className="col align-self-center">
                 <form>
-                  <input type="text" className="form-control" placeholder="Start typing to search all drivers"></input>
+                  <input type="text" className="form-control" placeholder="Start typing to search drivers"></input>
                 </form>
+              </div>
+              <div className="col-auto align-self-center">
+                <Link to={`/fleets/${params.fleetID}/drivers/new`} className="btn btn-custom">
+                  New Driver
+                </Link>
               </div>
             </div>
           </div>
@@ -33,7 +60,7 @@ class PartnerDrivers extends Component {
                 </tr>
               </thead>
               <tbody>
-                {PartnerDriverList.map((driver) =>
+                {FleetDriverList.map((driver) =>
                   <tr key={driver.id}>
                     <td>
                       <div className="image-cover image-cover-sm" 
@@ -49,7 +76,7 @@ class PartnerDrivers extends Component {
                       </span>
                     </td>
                     <td className="text-center">
-                      <Link to={`/qruzbusiness/partners/${params.partnerID}/drivers/${driver.id}/edit`} className="btn btn-sm btn-light">Edit</Link>
+                      <Link to={`/fleets/${params.fleetID}/drivers/${driver.id}/edit`} className="btn btn-sm btn-light">Edit</Link>
                     </td>
                     <td>
                       <button type="button" className="btn btn-sm btn-light">Delete</button>
@@ -65,4 +92,4 @@ class PartnerDrivers extends Component {
   }
 }
 
-export default PartnerDrivers
+export default FleetDrivers

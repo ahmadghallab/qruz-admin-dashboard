@@ -1,2 +1,0 @@
-### Qruz
-Admin Dashboard
